@@ -1,0 +1,26 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Ignora caches do Kotlin e configuracoes locais do Android Studio.
+.kotlin/
+.idea/
+
+# Ignora arquivos de assinatura e credenciais locais.
+*.jks
+*.keystore
+keystore.properties
+.env
+.env.*
