@@ -1,0 +1,4 @@
+<!-- Desenha o icone de sino usado na tela inicial, sem depender de bibliotecas extras. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="@android:color/transparent" android:strokeColor="#783E19" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M5,17 L19,17 L17,14 L17,9 C17,3 7,3 7,9 L7,14 Z M10,20 C10,23 14,23 14,20 M12,2 L12,4" />
+</vector>

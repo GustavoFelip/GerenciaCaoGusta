@@ -3,6 +3,7 @@ package com.example.gerenciacao
 
 import android.util.Patterns
 import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -19,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -36,7 +38,9 @@ private val BordaCadastro = Color(0xFFE8DFD4)
 
 @Composable
 fun TelaCadastro(
-    aoVoltarLogin: () -> Unit = {}
+    aoVoltarLogin: () -> Unit = {},
+    // Conclui o formulario validado e permite ao chamador definir a proxima tela.
+    aoConcluirCadastro: (String) -> Unit
 ) {
     // Guarda os dados enquanto a tela está aberta.
     var nome by rememberSaveable { mutableStateOf("") }
@@ -48,6 +52,11 @@ fun TelaCadastro(
     }
 
     val contexto = LocalContext.current
+
+    // Retorna ao login quando o usuario usa o botao Voltar do Android.
+    BackHandler {
+        aoVoltarLogin()
+    }
 
     Column(
         modifier = Modifier
@@ -200,12 +209,8 @@ fun TelaCadastro(
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {
-                    // O cadastro real será conectado depois.
-                    Toast.makeText(
-                        contexto,
-                        "Dados válidos! O cadastro ainda será conectado.",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    // Conclui o formulario apenas quando todos os campos sao validos.
+                    aoConcluirCadastro(email.trim())
                 }
             },
             modifier = Modifier
@@ -243,9 +248,15 @@ fun TelaCadastro(
     }
 }
 
+// Exibe o logotipo existente no cabecalho sem interromper a abertura do cadastro.
 @Composable
 fun Logolaranja(modifier: Modifier) {
-    TODO("Not yet implemented")
+    Image(
+        painter = painterResource(R.drawable.logolaranja),
+        contentDescription = "Logotipo do GerenciaCÃO",
+        modifier = modifier.size(68.dp),
+        contentScale = ContentScale.Fit
+    )
 }
 
 // CAMPO REUTILIZÁVEL

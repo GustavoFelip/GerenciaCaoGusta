@@ -24,3 +24,7 @@ local.properties
 keystore.properties
 .env
 .env.*
+
+# Relatorios locais de falha da JVM.
+hs_err_pid*.log
+replay_pid*.log

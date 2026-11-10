@@ -1,0 +1,4 @@
+<!-- Desenha o icone de seta usado na tela inicial, sem depender de bibliotecas extras. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="@android:color/transparent" android:strokeColor="#783E19" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M9,5 L15,12 L9,19" />
+</vector>

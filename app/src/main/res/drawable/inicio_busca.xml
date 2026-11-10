@@ -1,0 +1,4 @@
+<!-- Desenha o icone de busca usado na tela inicial, sem depender de bibliotecas extras. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="@android:color/transparent" android:strokeColor="#783E19" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M17,17 L22,22 M19,10 A8,8 0,1 1,3 10 A8,8 0,1 1,19 10" />
+</vector>

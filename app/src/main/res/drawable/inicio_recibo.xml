@@ -1,0 +1,4 @@
+<!-- Desenha o icone de recibo usado na tela inicial, sem depender de bibliotecas extras. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="@android:color/transparent" android:strokeColor="#783E19" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M6,2 L18,2 L18,22 L15,20 L12,22 L9,20 L6,22 Z M9,7 L15,7 M9,11 L15,11 M9,15 L13,15" />
+</vector>

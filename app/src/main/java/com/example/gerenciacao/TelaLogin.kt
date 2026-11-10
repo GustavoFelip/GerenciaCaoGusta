@@ -1,5 +1,6 @@
 package com.example.gerenciacao
 
+import android.util.Patterns
 import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -163,19 +164,18 @@ fun TelaLogin(
         // Botão principal.
         Button(
             onClick = {
-                if (email.isBlank() || senha.isBlank()) {
-                    Toast.makeText(
-                        contexto,
-                        "Preencha o e-mail e a senha.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                // Valida o formato dos dados sem consultar contas no banco de dados.
+                val mensagemErro = when {
+                    email.isBlank() || senha.isBlank() -> "Preencha o e-mail e a senha."
+                    !Patterns.EMAIL_ADDRESS.matcher(email.trim()).matches() -> "Informe um e-mail válido."
+                    senha.length < 8 -> "A senha deve ter pelo menos 8 caracteres."
+                    else -> null
+                }
+                if (mensagemErro != null) {
+                    Toast.makeText(contexto, mensagemErro, Toast.LENGTH_SHORT).show()
                 } else {
-                    // Ainda não existe autenticação conectada.
-                    Toast.makeText(
-                        contexto,
-                        "A autenticação será implementada em breve.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    // Permite acessar a demonstracao com qualquer e-mail e senha validos.
+                    aoAcessar()
                 }
             },
             modifier = Modifier
@@ -188,7 +188,7 @@ fun TelaLogin(
             )
         ) {
             Text(
-                text = "Entrar",
+                text = "Acessar",
                 fontSize = 17.sp,
                 fontWeight = FontWeight.Bold
             )

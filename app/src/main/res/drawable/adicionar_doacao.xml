@@ -1,0 +1,4 @@
+<!-- Desenha o presente que identifica o registro de doacoes. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+ <path android:fillColor="@android:color/transparent" android:strokeColor="#783E19" android:strokeWidth="1.8" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M3,7 L21,7 L21,11 L3,11 Z M5,11 L5,22 L19,22 L19,11 M12,7 L12,22 M12,7 C6,7 5,1 8,1 C11,1 12,7 12,7 C12,7 13,1 16,1 C19,1 18,7 12,7" />
+</vector>
